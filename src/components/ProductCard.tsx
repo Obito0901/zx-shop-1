@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Heart, Star } from 'lucide-react';
+import { ShoppingCart, Heart, Star, CloudCog } from 'lucide-react';
 import { Product } from '../data/products';
 
 interface ProductCardProps {
@@ -7,6 +7,16 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  // Buy Button action
+  function handleBuy(product:Product) {
+    let data = product["image"]
+    let img =(window.origin+data);
+    product["image"] = img;
+    
+
+    window.open("https://api.whatsapp.com/send?phone=9345916715&text="+ JSON.stringify(product))
+  }
+  
   return (
     <div className="group relative flex-shrink-0 w-72 md:w-80 bg-gradient-to-br from-purple-900/20 to-black/40 rounded-2xl overflow-hidden border border-purple-500/20 hover:border-green-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-400/20">
       {/* Product Image */}
@@ -29,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         {/* Quick Buy */}
         <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-          <button className="w-full py-3 bg-gradient-to-r from-green-400 to-green-600 text-black font-bold text-sm rounded-full hover:from-green-300 hover:to-green-500 transition-all duration-300 flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-green-400/30">
+          <button onClick={()=>handleBuy(product)} className="w-full py-3 bg-gradient-to-r from-green-400 to-green-600 text-black font-bold text-sm rounded-full hover:from-green-300 hover:to-green-500 transition-all duration-300 flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-green-400/30">
             <ShoppingCart size={16} />
             <span>QUICK BUY</span>
           </button>
@@ -71,7 +81,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             )}
           </div>
           
-          <button className="px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-sm rounded-full hover:from-red-400 hover:to-red-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/30">
+          <button onClick={()=>handleBuy(product)} className="px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-sm rounded-full hover:from-red-400 hover:to-red-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/30">
             BUY NOW
           </button>
         </div>
