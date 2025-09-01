@@ -4,26 +4,26 @@ import { PlayCircle, Star } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
+
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <source src="videos/promo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       {/* Animated Background Layers */}
       <div className="absolute inset-0 z-0">
         {/* Base Battle Scene */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-red-900/30 to-purple-900/50 animate-pulse"></div>
-        
+
         {/* Animated Lightning Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-blue-400/20 to-transparent animate-lightning-1"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent via-yellow-400/20 to-transparent animate-lightning-2"></div>
-        </div>
-        
-        {/* Energy Waves */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-0 w-full h-32 bg-gradient-to-r from-green-400/10 via-green-400/30 to-transparent animate-energy-wave-1"></div>
-          <div className="absolute bottom-1/4 right-0 w-full h-32 bg-gradient-to-l from-red-400/10 via-red-400/30 to-transparent animate-energy-wave-2"></div>
-        </div>
-        
+
+
         {/* Battle Impact Flashes */}
         <div className="absolute inset-0 bg-white/5 animate-battle-flash"></div>
-        
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
       </div>
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-20 left-10 w-32 h-32 bg-green-400/30 rounded-full blur-3xl animate-energy-orb-1"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-red-500/30 rounded-full blur-3xl animate-energy-orb-2"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-blue-400/20 rounded-full blur-3xl animate-energy-orb-3"></div>
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-green-400 rounded-full animate-float-particle-1"></div>
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
             <span className="text-green-400 font-bold tracking-wider uppercase">New Collection</span>
             <Star className="text-yellow-400 animate-spin" size={24} />
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight animate-title-glow">
             <span className="bg-gradient-to-r from-green-400 via-blue-400 to-red-500 bg-clip-text text-transparent">
               ANIME
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               STREETWEAR
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Where Japanese culture meets street fashion. Exclusive designs inspired by your favorite anime.
           </p>
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
             <span className="relative z-10">SHOP NOW</span>
             <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
           </button>
-          
+
           <button className="group flex items-center space-x-3 px-8 py-4 border-2 border-red-500 text-red-400 font-bold text-lg rounded-full hover:bg-red-500/10 hover:border-red-400 hover:text-red-300 transition-all duration-300 animate-border-glow">
             <PlayCircle size={24} />
             <span>Watch Lookbook</span>
