@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProductCarousel from '../components/ProductCarousel';
 import { featuredProducts, newDrops, limitedEdition } from '../data/products';
-import { Zap, Flame, Star } from 'lucide-react';
+import {  Flame, Star } from 'lucide-react';
 
 const HomePage: React.FC = () => {
   return (

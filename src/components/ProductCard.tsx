@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Heart, Star, CloudCog } from 'lucide-react';
+import { ShoppingCart, Heart, Star } from 'lucide-react';
 import { Product } from '../data/products';
 
 interface ProductCardProps {
