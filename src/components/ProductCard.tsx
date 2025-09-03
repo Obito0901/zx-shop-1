@@ -10,7 +10,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   // Buy Button action
   function handleBuy(product:Product) {
     let data = product["image"]
-    let img =(window.origin+data);
+    let img =(window.origin+"/"+data);
     product["image"] = img;
     
 
