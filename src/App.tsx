@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -11,10 +11,10 @@ type Page = 'home' | 'shop' | 'about' | 'contact';
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
-  const renderPage = () => {
+  const renderPage = (setCurrentPage: Dispatch<SetStateAction<Page>>) => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
+        return <HomePage onPageChange={setCurrentPage}/>;
       case 'shop':
         return <ShopPage />;
       case 'about':
@@ -22,7 +22,7 @@ function App() {
       case 'contact':
         return <ContactPage />;
       default:
-        return <HomePage />;
+        return <HomePage onPageChange={setCurrentPage}/>;
     }
   };
 
@@ -30,7 +30,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black text-white">
       <Header currentPage={currentPage} onPageChange={setCurrentPage} />
       <main className="pt-16">
-        {renderPage()}
+        {renderPage(setCurrentPage)}
       </main>
       <Footer />
     </div>

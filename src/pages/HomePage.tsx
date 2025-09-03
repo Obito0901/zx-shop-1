@@ -4,10 +4,14 @@ import ProductCarousel from '../components/ProductCarousel';
 import { featuredProducts, newDrops, limitedEdition } from '../data/products';
 import {  Flame, Star } from 'lucide-react';
 
-const HomePage: React.FC = () => {
+interface HeaderProps {
+  onPageChange: (page: 'home' | 'shop' | 'about' | 'contact') => void;
+}
+
+const HomePage: React.FC<HeaderProps> = ({ onPageChange }) => {
   return (
     <div>
-      <Hero />
+      <Hero  onPageChange={ onPageChange }/>
       
       {/* Featured Collections */}
       <section className="py-16">

@@ -1,7 +1,12 @@
 import React from 'react';
 import { PlayCircle, Star } from 'lucide-react';
 
-const Hero: React.FC = () => {
+
+interface HeaderProps {
+  onPageChange: (page: 'home' | 'shop' | 'about' | 'contact') => void;
+}
+
+const Hero: React.FC<HeaderProps> = ({ onPageChange }) => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
 
@@ -66,9 +71,9 @@ const Hero: React.FC = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6" onClick={() => onPageChange('shop')}>
           <button className="group relative px-8 py-4 bg-gradient-to-r from-green-400 to-green-600 text-black font-bold text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-400/50 animate-button-glow">
-            <span className="relative z-10">SHOP NOW</span>
+            <span className="relative z-10" >SHOP NOW</span>
             <div className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
           </button>
 
