@@ -8,7 +8,7 @@ const ShopPage: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = ['All', 'NARUTO', 'JJK', 'ONE PICES', 'ATTACKR', 'DROGEN BALL'];
+  const categories = ['All', 'NARUTO', 'JJK', 'ONE PIECE', 'DRAGON BALL', 'BIKER', ];
 
   const filteredProducts = allProducts.filter(product => {
     const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
